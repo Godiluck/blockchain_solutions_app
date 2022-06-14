@@ -3,7 +3,7 @@
     <div class="currencies">
       <div class="info"></div>
       <div class="currency" v-for="currency of currencies" :key="currency">
-        <input class="currency_amount" v-model="currency.amount"/>
+        <input type="number" class="currency_amount" v-model="currency.amount"/>
         <div class="currency_symbol">{{ currency.symbol }}</div>
         <div class="minus" @click="subtractAmount(currency.symbol)">-</div>
         <div class="plus" @click="addAmount(currency.symbol)">+</div>
@@ -213,5 +213,11 @@ export default {
   height: 6vh;
   background: white;
   border-radius: 15px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 </style>
